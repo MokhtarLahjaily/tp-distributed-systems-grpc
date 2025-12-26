@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "app.grpc";
+option java_outer_classname = "MultiplicationProto";
+
+service Multiplication {
+  // Le client envoie UN objet (Request), le serveur renvoie un FLUX (Stream)
+  rpc getMultiplicationTable (MultiplicationRequest) returns (stream MultiplicationResponse);
+}
+
+message MultiplicationRequest {
+  int32 nombre = 1; // Le nombre dont on veut la table (ex: 5)
+  int32 limite = 2; // Jusqu'à combien (ex: 10)
+}
+
+message MultiplicationResponse {
+  string resultat = 1; // Ex: "5 x 1 = 5"
+}
