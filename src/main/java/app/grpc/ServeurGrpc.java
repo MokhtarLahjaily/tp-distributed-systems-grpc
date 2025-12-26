@@ -10,6 +10,7 @@ public class ServeurGrpc {
         Server server = ServerBuilder.forPort(9082)
                 .addService(new UserService())
                 .addService(new SalutationService())
+                .addService(new MultiplicationService())
                 .build();
 
         server.start();
