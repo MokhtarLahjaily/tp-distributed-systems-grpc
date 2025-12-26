@@ -65,10 +65,10 @@
                             <goal>run</goal>
                         </goals>
                         <configuration>
-                            <includeMavenTypes>direct</includeMavenTypes>
                             <inputDirectories>
                                 <include>src/main/resources</include>
                             </inputDirectories>
+
                             <outputTargets>
                                 <outputTarget>
                                     <type>java</type>
