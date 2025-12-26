@@ -1,30 +1,18 @@
 package app.grpc;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.15.0)",
+    value = "by gRPC proto compiler (version 1.60.1)",
     comments = "Source: user.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class userGrpc {
 
   private userGrpc() {}
 
-  public static final String SERVICE_NAME = "user";
+  public static final java.lang.String SERVICE_NAME = "user";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<app.grpc.UserProto.LoginRequest,
@@ -41,29 +29,35 @@ public final class userGrpc {
     if ((getLoginMethod = userGrpc.getLoginMethod) == null) {
       synchronized (userGrpc.class) {
         if ((getLoginMethod = userGrpc.getLoginMethod) == null) {
-          userGrpc.getLoginMethod = getLoginMethod = 
+          userGrpc.getLoginMethod = getLoginMethod =
               io.grpc.MethodDescriptor.<app.grpc.UserProto.LoginRequest, app.grpc.UserProto.LoginResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "user", "login"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "login"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   app.grpc.UserProto.LoginRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   app.grpc.UserProto.LoginResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new userMethodDescriptorSupplier("login"))
-                  .build();
-          }
+              .setSchemaDescriptor(new userMethodDescriptorSupplier("login"))
+              .build();
         }
-     }
-     return getLoginMethod;
+      }
+    }
+    return getLoginMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static userStub newStub(io.grpc.Channel channel) {
-    return new userStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<userStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<userStub>() {
+        @java.lang.Override
+        public userStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new userStub(channel, callOptions);
+        }
+      };
+    return userStub.newStub(factory, channel);
   }
 
   /**
@@ -71,7 +65,14 @@ public final class userGrpc {
    */
   public static userBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new userBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<userBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<userBlockingStub>() {
+        @java.lang.Override
+        public userBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new userBlockingStub(channel, callOptions);
+        }
+      };
+    return userBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -79,48 +80,52 @@ public final class userGrpc {
    */
   public static userFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new userFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<userFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<userFutureStub>() {
+        @java.lang.Override
+        public userFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new userFutureStub(channel, callOptions);
+        }
+      };
+    return userFutureStub.newStub(factory, channel);
   }
 
   /**
    */
-  public static abstract class userImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      */
-    public void login(app.grpc.UserProto.LoginRequest request,
+    default void login(app.grpc.UserProto.LoginRequest request,
         io.grpc.stub.StreamObserver<app.grpc.UserProto.LoginResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
-    }
-
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getLoginMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                app.grpc.UserProto.LoginRequest,
-                app.grpc.UserProto.LoginResponse>(
-                  this, METHODID_LOGIN)))
-          .build();
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
     }
   }
 
   /**
+   * Base class for the server implementation of the service user.
    */
-  public static final class userStub extends io.grpc.stub.AbstractStub<userStub> {
-    private userStub(io.grpc.Channel channel) {
-      super(channel);
-    }
+  public static abstract class userImplBase
+      implements io.grpc.BindableService, AsyncService {
 
-    private userStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+      return userGrpc.bindService(this);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service user.
+   */
+  public static final class userStub
+      extends io.grpc.stub.AbstractAsyncStub<userStub> {
+    private userStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected userStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected userStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new userStub(channel, callOptions);
     }
 
@@ -128,52 +133,48 @@ public final class userGrpc {
      */
     public void login(app.grpc.UserProto.LoginRequest request,
         io.grpc.stub.StreamObserver<app.grpc.UserProto.LoginResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
+   * A stub to allow clients to do synchronous rpc calls to service user.
    */
-  public static final class userBlockingStub extends io.grpc.stub.AbstractStub<userBlockingStub> {
-    private userBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private userBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class userBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<userBlockingStub> {
+    private userBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected userBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected userBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new userBlockingStub(channel, callOptions);
     }
 
     /**
      */
     public app.grpc.UserProto.LoginResponse login(app.grpc.UserProto.LoginRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLoginMethod(), getCallOptions(), request);
     }
   }
 
   /**
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service user.
    */
-  public static final class userFutureStub extends io.grpc.stub.AbstractStub<userFutureStub> {
-    private userFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private userFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class userFutureStub
+      extends io.grpc.stub.AbstractFutureStub<userFutureStub> {
+    private userFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected userFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected userFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new userFutureStub(channel, callOptions);
     }
 
@@ -181,7 +182,7 @@ public final class userGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<app.grpc.UserProto.LoginResponse> login(
         app.grpc.UserProto.LoginRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLoginMethod(), getCallOptions()), request);
     }
   }
@@ -193,10 +194,10 @@ public final class userGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final userImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(userImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -225,6 +226,18 @@ public final class userGrpc {
     }
   }
 
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+          getLoginMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              app.grpc.UserProto.LoginRequest,
+              app.grpc.UserProto.LoginResponse>(
+                service, METHODID_LOGIN)))
+        .build();
+  }
+
   private static abstract class userBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     userBaseDescriptorSupplier() {}
@@ -248,9 +261,9 @@ public final class userGrpc {
   private static final class userMethodDescriptorSupplier
       extends userBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    userMethodDescriptorSupplier(String methodName) {
+    userMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

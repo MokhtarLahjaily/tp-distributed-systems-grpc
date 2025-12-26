@@ -33,17 +33,17 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-stub</artifactId>
-            <version>1.15.1</version>
+            <version>1.60.1</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-protobuf</artifactId>
-            <version>1.15.1</version>
+            <version>1.60.1</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty</artifactId>
-            <version>1.16.1</version>
+            <version>1.60.1</version>
         </dependency>
         <dependency>
             <groupId>jakarta.annotation</groupId>
@@ -76,7 +76,7 @@
                                 </outputTarget>
                                 <outputTarget>
                                     <type>grpc-java</type>
-                                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.15.0</pluginArtifact>
+                                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.60.1</pluginArtifact>
                                     <outputDirectory>src/main/java</outputDirectory>
                                 </outputTarget>
                             </outputTargets>
