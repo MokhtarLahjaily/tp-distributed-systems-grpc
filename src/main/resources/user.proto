@@ -1,18 +1,18 @@
 syntax = "proto3";
 
-option java_package = "app.grpc";
-option java_outer_classname = "UserProto"; // Best practice to avoid naming conflicts
+option java_package = "app.grpc"; // Ou "stub" selon le PDF, mais gardons app.grpc pour la cohérence
+option java_outer_classname = "UserProto";
 
-service user {
+service Authentication {
   rpc login (LoginRequest) returns (LoginResponse);
 }
 
 message LoginRequest {
-  string userName = 1;
+  string username = 1;
   string password = 2;
 }
 
 message LoginResponse {
-  string msgResponse = 1;
+  string msgReponse = 1; // Notez le changement de nom msgResponse -> msgReponse dans le PDF
   int32 idResponse = 2;
 }

@@ -19,14 +19,14 @@ public final class UserProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string userName = 1;</code>
+     * <code>string username = 1;</code>
      */
-    java.lang.String getUserName();
+    java.lang.String getUsername();
     /**
-     * <code>string userName = 1;</code>
+     * <code>string username = 1;</code>
      */
     com.google.protobuf.ByteString
-        getUserNameBytes();
+        getUsernameBytes();
 
     /**
      * <code>string password = 2;</code>
@@ -51,7 +51,7 @@ public final class UserProto {
       super(builder);
     }
     private LoginRequest() {
-      userName_ = "";
+      username_ = "";
       password_ = "";
     }
 
@@ -82,7 +82,7 @@ public final class UserProto {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              userName_ = s;
+              username_ = s;
               break;
             }
             case 18: {
@@ -124,33 +124,33 @@ public final class UserProto {
     }
 
     public static final int USERNAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object userName_;
+    private volatile java.lang.Object username_;
     /**
-     * <code>string userName = 1;</code>
+     * <code>string username = 1;</code>
      */
-    public java.lang.String getUserName() {
-      java.lang.Object ref = userName_;
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userName_ = s;
+        username_ = s;
         return s;
       }
     }
     /**
-     * <code>string userName = 1;</code>
+     * <code>string username = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getUserNameBytes() {
-      java.lang.Object ref = userName_;
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userName_ = b;
+        username_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -205,8 +205,8 @@ public final class UserProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUserNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userName_);
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
       }
       if (!getPasswordBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
@@ -220,8 +220,8 @@ public final class UserProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUserNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userName_);
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
       }
       if (!getPasswordBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
@@ -242,8 +242,8 @@ public final class UserProto {
       app.grpc.UserProto.LoginRequest other = (app.grpc.UserProto.LoginRequest) obj;
 
       boolean result = true;
-      result = result && getUserName()
-          .equals(other.getUserName());
+      result = result && getUsername()
+          .equals(other.getUsername());
       result = result && getPassword()
           .equals(other.getPassword());
       result = result && unknownFields.equals(other.unknownFields);
@@ -258,7 +258,7 @@ public final class UserProto {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
+      hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -394,7 +394,7 @@ public final class UserProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        userName_ = "";
+        username_ = "";
 
         password_ = "";
 
@@ -424,7 +424,7 @@ public final class UserProto {
       @java.lang.Override
       public app.grpc.UserProto.LoginRequest buildPartial() {
         app.grpc.UserProto.LoginRequest result = new app.grpc.UserProto.LoginRequest(this);
-        result.userName_ = userName_;
+        result.username_ = username_;
         result.password_ = password_;
         onBuilt();
         return result;
@@ -474,8 +474,8 @@ public final class UserProto {
 
       public Builder mergeFrom(app.grpc.UserProto.LoginRequest other) {
         if (other == app.grpc.UserProto.LoginRequest.getDefaultInstance()) return this;
-        if (!other.getUserName().isEmpty()) {
-          userName_ = other.userName_;
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
           onChanged();
         }
         if (!other.getPassword().isEmpty()) {
@@ -511,71 +511,71 @@ public final class UserProto {
         return this;
       }
 
-      private java.lang.Object userName_ = "";
+      private java.lang.Object username_ = "";
       /**
-       * <code>string userName = 1;</code>
+       * <code>string username = 1;</code>
        */
-      public java.lang.String getUserName() {
-        java.lang.Object ref = userName_;
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          userName_ = s;
+          username_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string userName = 1;</code>
+       * <code>string username = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getUserNameBytes() {
-        java.lang.Object ref = userName_;
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          userName_ = b;
+          username_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string userName = 1;</code>
+       * <code>string username = 1;</code>
        */
-      public Builder setUserName(
+      public Builder setUsername(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        userName_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string userName = 1;</code>
+       * <code>string username = 1;</code>
        */
-      public Builder clearUserName() {
+      public Builder clearUsername() {
         
-        userName_ = getDefaultInstance().getUserName();
+        username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
       /**
-       * <code>string userName = 1;</code>
+       * <code>string username = 1;</code>
        */
-      public Builder setUserNameBytes(
+      public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        userName_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
@@ -706,14 +706,22 @@ public final class UserProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string msgResponse = 1;</code>
+     * <pre>
+     * Notez le changement de nom msgResponse -&gt; msgReponse dans le PDF
+     * </pre>
+     *
+     * <code>string msgReponse = 1;</code>
      */
-    java.lang.String getMsgResponse();
+    java.lang.String getMsgReponse();
     /**
-     * <code>string msgResponse = 1;</code>
+     * <pre>
+     * Notez le changement de nom msgResponse -&gt; msgReponse dans le PDF
+     * </pre>
+     *
+     * <code>string msgReponse = 1;</code>
      */
     com.google.protobuf.ByteString
-        getMsgResponseBytes();
+        getMsgReponseBytes();
 
     /**
      * <code>int32 idResponse = 2;</code>
@@ -733,7 +741,7 @@ public final class UserProto {
       super(builder);
     }
     private LoginResponse() {
-      msgResponse_ = "";
+      msgReponse_ = "";
       idResponse_ = 0;
     }
 
@@ -764,7 +772,7 @@ public final class UserProto {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              msgResponse_ = s;
+              msgReponse_ = s;
               break;
             }
             case 16: {
@@ -804,34 +812,42 @@ public final class UserProto {
               app.grpc.UserProto.LoginResponse.class, app.grpc.UserProto.LoginResponse.Builder.class);
     }
 
-    public static final int MSGRESPONSE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object msgResponse_;
+    public static final int MSGREPONSE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object msgReponse_;
     /**
-     * <code>string msgResponse = 1;</code>
+     * <pre>
+     * Notez le changement de nom msgResponse -&gt; msgReponse dans le PDF
+     * </pre>
+     *
+     * <code>string msgReponse = 1;</code>
      */
-    public java.lang.String getMsgResponse() {
-      java.lang.Object ref = msgResponse_;
+    public java.lang.String getMsgReponse() {
+      java.lang.Object ref = msgReponse_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        msgResponse_ = s;
+        msgReponse_ = s;
         return s;
       }
     }
     /**
-     * <code>string msgResponse = 1;</code>
+     * <pre>
+     * Notez le changement de nom msgResponse -&gt; msgReponse dans le PDF
+     * </pre>
+     *
+     * <code>string msgReponse = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getMsgResponseBytes() {
-      java.lang.Object ref = msgResponse_;
+        getMsgReponseBytes() {
+      java.lang.Object ref = msgReponse_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        msgResponse_ = b;
+        msgReponse_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -861,8 +877,8 @@ public final class UserProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMsgResponseBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msgResponse_);
+      if (!getMsgReponseBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msgReponse_);
       }
       if (idResponse_ != 0) {
         output.writeInt32(2, idResponse_);
@@ -876,8 +892,8 @@ public final class UserProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMsgResponseBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msgResponse_);
+      if (!getMsgReponseBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msgReponse_);
       }
       if (idResponse_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -899,8 +915,8 @@ public final class UserProto {
       app.grpc.UserProto.LoginResponse other = (app.grpc.UserProto.LoginResponse) obj;
 
       boolean result = true;
-      result = result && getMsgResponse()
-          .equals(other.getMsgResponse());
+      result = result && getMsgReponse()
+          .equals(other.getMsgReponse());
       result = result && (getIdResponse()
           == other.getIdResponse());
       result = result && unknownFields.equals(other.unknownFields);
@@ -914,8 +930,8 @@ public final class UserProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSGRESPONSE_FIELD_NUMBER;
-      hash = (53 * hash) + getMsgResponse().hashCode();
+      hash = (37 * hash) + MSGREPONSE_FIELD_NUMBER;
+      hash = (53 * hash) + getMsgReponse().hashCode();
       hash = (37 * hash) + IDRESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getIdResponse();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1051,7 +1067,7 @@ public final class UserProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        msgResponse_ = "";
+        msgReponse_ = "";
 
         idResponse_ = 0;
 
@@ -1081,7 +1097,7 @@ public final class UserProto {
       @java.lang.Override
       public app.grpc.UserProto.LoginResponse buildPartial() {
         app.grpc.UserProto.LoginResponse result = new app.grpc.UserProto.LoginResponse(this);
-        result.msgResponse_ = msgResponse_;
+        result.msgReponse_ = msgReponse_;
         result.idResponse_ = idResponse_;
         onBuilt();
         return result;
@@ -1131,8 +1147,8 @@ public final class UserProto {
 
       public Builder mergeFrom(app.grpc.UserProto.LoginResponse other) {
         if (other == app.grpc.UserProto.LoginResponse.getDefaultInstance()) return this;
-        if (!other.getMsgResponse().isEmpty()) {
-          msgResponse_ = other.msgResponse_;
+        if (!other.getMsgReponse().isEmpty()) {
+          msgReponse_ = other.msgReponse_;
           onChanged();
         }
         if (other.getIdResponse() != 0) {
@@ -1167,71 +1183,91 @@ public final class UserProto {
         return this;
       }
 
-      private java.lang.Object msgResponse_ = "";
+      private java.lang.Object msgReponse_ = "";
       /**
-       * <code>string msgResponse = 1;</code>
+       * <pre>
+       * Notez le changement de nom msgResponse -&gt; msgReponse dans le PDF
+       * </pre>
+       *
+       * <code>string msgReponse = 1;</code>
        */
-      public java.lang.String getMsgResponse() {
-        java.lang.Object ref = msgResponse_;
+      public java.lang.String getMsgReponse() {
+        java.lang.Object ref = msgReponse_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          msgResponse_ = s;
+          msgReponse_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string msgResponse = 1;</code>
+       * <pre>
+       * Notez le changement de nom msgResponse -&gt; msgReponse dans le PDF
+       * </pre>
+       *
+       * <code>string msgReponse = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getMsgResponseBytes() {
-        java.lang.Object ref = msgResponse_;
+          getMsgReponseBytes() {
+        java.lang.Object ref = msgReponse_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          msgResponse_ = b;
+          msgReponse_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string msgResponse = 1;</code>
+       * <pre>
+       * Notez le changement de nom msgResponse -&gt; msgReponse dans le PDF
+       * </pre>
+       *
+       * <code>string msgReponse = 1;</code>
        */
-      public Builder setMsgResponse(
+      public Builder setMsgReponse(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        msgResponse_ = value;
+        msgReponse_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string msgResponse = 1;</code>
+       * <pre>
+       * Notez le changement de nom msgResponse -&gt; msgReponse dans le PDF
+       * </pre>
+       *
+       * <code>string msgReponse = 1;</code>
        */
-      public Builder clearMsgResponse() {
+      public Builder clearMsgReponse() {
         
-        msgResponse_ = getDefaultInstance().getMsgResponse();
+        msgReponse_ = getDefaultInstance().getMsgReponse();
         onChanged();
         return this;
       }
       /**
-       * <code>string msgResponse = 1;</code>
+       * <pre>
+       * Notez le changement de nom msgResponse -&gt; msgReponse dans le PDF
+       * </pre>
+       *
+       * <code>string msgReponse = 1;</code>
        */
-      public Builder setMsgResponseBytes(
+      public Builder setMsgReponseBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        msgResponse_ = value;
+        msgReponse_ = value;
         onChanged();
         return this;
       }
@@ -1333,12 +1369,12 @@ public final class UserProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nuser.proto\"2\n\014LoginRequest\022\020\n\010userName" +
-      "\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"8\n\rLoginRespons" +
-      "e\022\023\n\013msgResponse\030\001 \001(\t\022\022\n\nidResponse\030\002 \001" +
-      "(\0052.\n\004user\022&\n\005login\022\r.LoginRequest\032\016.Log" +
-      "inResponseB\025\n\010app.grpcB\tUserProtob\006proto" +
-      "3"
+      "\n\nuser.proto\"2\n\014LoginRequest\022\020\n\010username" +
+      "\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"7\n\rLoginRespons" +
+      "e\022\022\n\nmsgReponse\030\001 \001(\t\022\022\n\nidResponse\030\002 \001(" +
+      "\00528\n\016Authentication\022&\n\005login\022\r.LoginRequ" +
+      "est\032\016.LoginResponseB\025\n\010app.grpcB\tUserPro" +
+      "tob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1357,13 +1393,13 @@ public final class UserProto {
     internal_static_LoginRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LoginRequest_descriptor,
-        new java.lang.String[] { "UserName", "Password", });
+        new java.lang.String[] { "Username", "Password", });
     internal_static_LoginResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LoginResponse_descriptor,
-        new java.lang.String[] { "MsgResponse", "IdResponse", });
+        new java.lang.String[] { "MsgReponse", "IdResponse", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
