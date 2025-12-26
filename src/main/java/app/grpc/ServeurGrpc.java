@@ -9,6 +9,7 @@ public class ServeurGrpc {
         // Création et démarrage du serveur sur le port 9082
         Server server = ServerBuilder.forPort(9082)
                 .addService(new UserService())
+                .addService(new SalutationService())
                 .build();
 
         server.start();
